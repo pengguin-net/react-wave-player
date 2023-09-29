@@ -29,10 +29,19 @@ export const UsingMUI: Story = {
   render: () => (
     <MuiWrapper>
       <WavePlayer
-        src={'/sample.mp3'}
         playPauseButton={(props) => (
           <IconButton onClick={props.onClick}>{props.playing ? <PauseIcon /> : <PlayArrowIcon />}</IconButton>
         )}
+        waveOptions={{
+          url: '/sample.mp3',
+          height: 40,
+          barWidth: 2.5,
+          barRadius: 2.5,
+          barGap: 4,
+          cursorWidth: 0,
+          hideScrollbar: true,
+          normalize: true,
+        }}
       />
     </MuiWrapper>
   ),
