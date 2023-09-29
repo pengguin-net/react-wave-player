@@ -1,11 +1,11 @@
 import {WaveSurferOptions} from "wavesurfer.js";
-import { ComponentType, CSSProperties, ReactNode } from 'react';
+import {ComponentType, CSSProperties} from 'react';
 
 export type MyWaveSurferOptions = Omit<WaveSurferOptions, 'container'>;
 export interface PlayerProps {
+  waveOptions: MyWaveSurferOptions;
   src?: string;
   playPauseButton?: ComponentType<{ playing: boolean; onClick: () => void }>;
-  loader?: () => ReactNode;
-  waveOptions?: MyWaveSurferOptions;
+  loader?: () => React.JSX.Element;
   containerStyles?: CSSProperties;
 }
